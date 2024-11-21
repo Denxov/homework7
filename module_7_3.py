@@ -27,7 +27,7 @@ class WordsFinder():
         words_dict = {}
         for i in self.file_names:
             with open(i, 'r', encoding='utf-8') as file:
-                string = file.read().lower()+' '
+                string = file.read().lower()+' ' #добавлен пробел чтобы get_words учитывал последнее слово в тексте
                 words_dict[i] = self.get_words(string)
         return words_dict
 
