@@ -18,7 +18,7 @@ class WordsFinder():
             while strIn[i] in alfabet:
                 word = word + strIn[i]
                 i += 1
-            if not word in ['', '-']:
+            if not word in ["", "-","'"]:
                 words.append(word)
                 word = ''
             i += 1
@@ -39,17 +39,18 @@ class WordsFinder():
             for i in range(0, len(v)):
                 if word.lower() == v[i]:
                     words_dict[k] = i + 1
-                    return words_dict
+                    break
+        return words_dict
 
     def count(self, word):
+        words_dict = {}
         all_words = self.get_all_words()
-        count = 0
         for k, v in all_words.items():
+            count=0
             for i in range(0, len(v)):
                 if word.lower() == v[i]: count += 1
-        return {k: count}
-
-
+            if count>0:words_dict[k]=count
+        return words_dict
 
 
 finder2 = WordsFinder('test_file.txt')
