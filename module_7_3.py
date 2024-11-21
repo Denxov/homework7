@@ -12,15 +12,14 @@ class WordsFinder():
         alfabet = list("'abcdefghijklmnopqrstuvwxyz")
         i = 0
         while i < len(strIn):
-            while strIn[i] in azbook:
+            if strIn[i] in azbook:
                 word = word + strIn[i]
-                i += 1
-            while strIn[i] in alfabet:
+            elif strIn[i] in alfabet:
                 word = word + strIn[i]
-                i += 1
-            if not word in ["", "-","'"]:
-                words.append(word)
-                word = ''
+            else:
+                if not word in ["", "-","'"]:
+                    words.append(word)
+                    word = ''
             i += 1
         return words
 
@@ -57,3 +56,9 @@ finder2 = WordsFinder('test_file.txt')
 print(finder2.get_all_words()) # Все слова
 print(finder2.find('TEXT')) # 3 слово по счёту
 print(finder2.count('teXT')) # 4 слова teXT в тексте всего
+
+finder1 = WordsFinder('Walt Whitman - O Captain! My Captain!.txt')
+print(finder1.get_all_words())
+print(finder1.find('captain'))
+print(finder1.count('captain'))
+
