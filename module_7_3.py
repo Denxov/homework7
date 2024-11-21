@@ -1,7 +1,7 @@
 class WordsFinder():
-    file_names = []
 
     def __init__(self, *files):
+        self.file_names=[]
         for i in files:
             self.file_names.append(i)
 
