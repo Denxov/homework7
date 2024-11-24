@@ -22,3 +22,4 @@ else:
     result = "Ничья!"
 print(f"Результат битвы: {result}")
 print(f"Сегодня было решено {tasks_total} задач, в среднем по {time_avg} секунды на задачу!.")
+Initial
