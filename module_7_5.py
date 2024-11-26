@@ -1,7 +1,7 @@
 import os, time
 
 directory = "."
-os.chdir(r'd:\.')
+#os.chdir(r'd:\.')
 for root, dirs, files in os.walk(directory):
     for file in files:
         if os.path.exists(file):
